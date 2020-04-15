@@ -7,6 +7,7 @@ import HeartIcon from "./components/icons/HeartIcon";
 import ParkingIcon from "./components/icons/ParkingIcon";
 import BottomAppBar from "./components/BottomAppBar";
 import MetroIcon from "./components/icons/MetroIcon";
+import BusIcon from "./components/icons/BusIcon";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <HeartIcon />
       <MetroIcon />
       <ParkingIcon />
+      <BusIcon />
       <BottomAppBar />
     </div>
   );
