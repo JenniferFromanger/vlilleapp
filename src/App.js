@@ -1,5 +1,4 @@
 import React from "react";
-import Wilder from "./components/Wilder";
 import Navbar from "./components/NavBar";
 
 function App() {
