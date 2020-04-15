@@ -4,6 +4,7 @@ import GpsIcon from "./components/icons/GpsIcon";
 import ListIcon from "./components/icons/ListIcon";
 import HeartIconClicked from "./components/icons/HeartIconClicked";
 import HeartIcon from "./components/icons/HeartIcon";
+import BottomAppBar from "./components/BottomAppBar";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <ListIcon />
       <HeartIconClicked />
       <HeartIcon />
+      <BottomAppBar />
     </div>
   );
 }
