@@ -8,6 +8,7 @@ import ParkingIcon from "./components/icons/ParkingIcon";
 import BottomAppBar from "./components/BottomAppBar";
 import MetroIcon from "./components/icons/MetroIcon";
 import BusIcon from "./components/icons/BusIcon";
+import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
 function App() {
   return (
