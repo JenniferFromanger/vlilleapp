@@ -4,7 +4,7 @@ import GpsFixedIcon from "@material-ui/icons/GpsFixed";
 export default function GpsIcon() {
   return (
     <div>
-      <GpsFixedIcon />
+      <GpsFixedIcon color="secondary" />
     </div>
   );
 }

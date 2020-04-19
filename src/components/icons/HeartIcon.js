@@ -4,7 +4,7 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 export default function HeartIcon() {
   return (
     <div>
-      <FavoriteBorderIcon />
+      <FavoriteBorderIcon color="secondary" />
     </div>
   );
 }

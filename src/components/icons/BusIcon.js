@@ -4,7 +4,7 @@ import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
 export default function BusIcon() {
   return (
     <div>
-      <DirectionsBusIcon />
+      <DirectionsBusIcon color="secondary" />
     </div>
   );
 }

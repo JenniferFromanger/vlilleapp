@@ -4,7 +4,7 @@ import LocalParkingIcon from "@material-ui/icons/LocalParking";
 export default function ParkingIcon() {
   return (
     <div>
-      <LocalParkingIcon />
+      <LocalParkingIcon color="secondary" />
     </div>
   );
 }

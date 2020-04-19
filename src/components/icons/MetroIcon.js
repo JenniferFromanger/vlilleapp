@@ -4,7 +4,7 @@ import DirectionsTransitIcon from "@material-ui/icons/DirectionsTransit";
 export default function MetroIcon() {
   return (
     <div>
-      <DirectionsTransitIcon />
+      <DirectionsTransitIcon color="secondary" />
     </div>
   );
 }

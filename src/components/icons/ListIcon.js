@@ -4,7 +4,7 @@ import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
 export default function ListIcon() {
   return (
     <div>
-      <FormatListNumberedIcon />
+      <FormatListNumberedIcon color="secondary" />
     </div>
   );
 }

@@ -8,19 +8,23 @@ import ParkingIcon from "./components/icons/ParkingIcon";
 import BottomAppBar from "./components/BottomAppBar";
 import MetroIcon from "./components/icons/MetroIcon";
 import BusIcon from "./components/icons/BusIcon";
+import {ThemeProvider} from "@material-ui/core/styles";
+import theme from "./components/Theme";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <GpsIcon />
-      <ListIcon />
-      <HeartIconClicked />
-      <HeartIcon />
-      <MetroIcon />
-      <ParkingIcon />
-      <BusIcon />
-      <BottomAppBar />
+      <ThemeProvider theme={theme}>
+        <Navbar />
+        <GpsIcon />
+        <ListIcon />
+        <HeartIconClicked />
+        <HeartIcon />
+        <MetroIcon />
+        <ParkingIcon />
+        <BusIcon />
+        <BottomAppBar />
+      </ThemeProvider>
     </div>
   );
 }
