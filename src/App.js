@@ -10,6 +10,7 @@ import MetroIcon from "./components/icons/MetroIcon";
 import BusIcon from "./components/icons/BusIcon";
 import {ThemeProvider} from "@material-ui/core/styles";
 import theme from "./components/Theme";
+import BikecycleIcon from "./components/icons/BikecycleIcon";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <MetroIcon />
         <ParkingIcon />
         <BusIcon />
+        <BikecycleIcon />
         <BottomAppBar />
       </ThemeProvider>
     </div>
