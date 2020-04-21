@@ -8,13 +8,10 @@ import ParkingIcon from "./components/icons/ParkingIcon";
 import BottomAppBar from "./components/BottomAppBar";
 import MetroIcon from "./components/icons/MetroIcon";
 import BusIcon from "./components/icons/BusIcon";
-<<<<<<< HEAD
 import {ThemeProvider} from "@material-ui/core/styles";
 import theme from "./components/Theme";
 import BikecycleIcon from "./components/icons/BikecycleIcon";
-=======
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
->>>>>>> 517b6b896cd0b77a094a340d0d74e6f751b13953
+import {Map, Marker, Popup, TileLayer} from "react-leaflet";
 
 function App() {
   return (
