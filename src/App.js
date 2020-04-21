@@ -11,6 +11,7 @@ import BusIcon from "./components/icons/BusIcon";
 import {ThemeProvider} from "@material-ui/core/styles";
 import theme from "./components/Theme";
 import BikecycleIcon from "./components/icons/BikecycleIcon";
+import CreditCard from "./components/icons/CreditCard";
 import {Map, Marker, Popup, TileLayer} from "react-leaflet";
 
 function App() {
