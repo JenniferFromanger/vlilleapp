@@ -26,6 +26,7 @@ function App() {
         <ParkingIcon />
         <BusIcon />
         <BikecycleIcon />
+        <CreditCard />
         <BottomAppBar />
       </ThemeProvider>
     </div>
