@@ -13,25 +13,27 @@ import theme from "./components/Theme";
 import BikecycleIcon from "./components/icons/BikecycleIcon";
 import CreditCard from "./components/icons/CreditCard";
 import {Map, Marker, Popup, TileLayer} from "react-leaflet";
+import Mappy from "./components/Mappy";
 
-function App() {
-  return (
-    <div className="App">
-      <ThemeProvider theme={theme}>
-        <Navbar />
-        <GpsIcon />
-        <ListIcon />
-        <HeartIconClicked />
-        <HeartIcon />
-        <MetroIcon />
-        <ParkingIcon />
-        <BusIcon />
-        <BikecycleIcon />
-        <CreditCard />
-        <BottomAppBar />
-      </ThemeProvider>
-    </div>
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <ThemeProvider theme={theme}>
+          <Mappy />
+          <Navbar />
+          <GpsIcon />
+          <ListIcon />
+          <HeartIconClicked />
+          <HeartIcon />
+          <MetroIcon />
+          <ParkingIcon />
+          <BusIcon />
+          <BikecycleIcon />
+          <CreditCard />
+          <BottomAppBar />
+        </ThemeProvider>
+      </div>
+    );
+  }
 }
-
-export default App;

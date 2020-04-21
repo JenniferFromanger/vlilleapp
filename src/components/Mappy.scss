@@ -1,0 +1,12 @@
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.popup .leaflet-popup-content-wrapper {
+  color: rgb(255, 0, 119);
+}
+
+.marker .popup .leaflet-popup-content-wrapper {
+  background-color: red;
+}
