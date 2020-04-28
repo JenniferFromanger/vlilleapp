@@ -9,7 +9,7 @@ class Search extends Component {
     const searchControl = new ELG.Geosearch().addTo(map);
     const results = new L.LayerGroup().addTo(map);
 
-    searchControl.on("results", function(data) {
+    searchControl.on("results", function (data) {
       results.clearLayers();
       for (let i = data.results.length - 1; i >= 0; i--) {
         results.addLayer(L.marker(data.results[i].latlng));
@@ -18,9 +18,8 @@ class Search extends Component {
   }
 
   render() {
-    return null
+    return null;
   }
 }
-
 
 export default withLeaflet(Search);

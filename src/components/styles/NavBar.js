@@ -7,6 +7,8 @@ import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
+import Search from "./SearchBar";
+import SearchBar from "./SearchBar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -90,6 +92,7 @@ export default function NavBar() {
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
+              inputComponent={SearchBar}
             />
           </div>
         </Toolbar>
