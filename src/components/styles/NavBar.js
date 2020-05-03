@@ -8,7 +8,11 @@ import { fade, makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import Search from "./SearchBar";
-import SearchBar from "./SearchBar";
+
+import { Component } from "react";
+import L from "leaflet";
+import * as ELG from "esri-leaflet-geocoder";
+import { withLeaflet } from "react-leaflet";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -91,8 +95,6 @@ export default function NavBar() {
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
-              inputProps={{ "aria-label": "search" }}
-              inputComponent={SearchBar}
             />
           </div>
         </Toolbar>

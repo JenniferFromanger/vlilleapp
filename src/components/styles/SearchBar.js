@@ -4,6 +4,11 @@ import * as ELG from "esri-leaflet-geocoder";
 import { withLeaflet } from "react-leaflet";
 
 class Search extends Component {
+  constructor(props) {
+    super(props);
+    this.componentDidMount = this.componentDidMount.bind(this);
+  }
+
   componentDidMount() {
     const map = this.props.leaflet.map;
     const searchControl = new ELG.Geosearch().addTo(map);
