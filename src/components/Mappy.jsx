@@ -3,6 +3,7 @@ import "./Mappy.scss";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import LocateControl from "./geo-local";
+import Cb from '../icons/Cb';
 
 const iconeFull = new Icon({
   iconUrl: "/full.png",
@@ -102,9 +103,15 @@ export default function Mappy({ stations, stationState }) {
                 ]}
               >
                 <h2>Station: {station.fields.nom}</h2>
+                <div className="popup_contain">
+                  <div className="info_velos">
                 <p>Nombres vélos: {station.fields.nbvelosdispo}</p>
                 <p>Nombres places: {station.fields.nbplacesdispo}</p>
-                )}
+                </div>
+                <div className="cb">
+                  <p>{station.fields.type==='AVEC TPE' && <Cb/>}</p>
+                </div>
+                </div>
               </Popup>
             )}
           </Marker>
