@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -7,7 +7,9 @@ import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-
+import axios from "axios";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import LocationSearchInput from "../LocationSearchInput";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -62,7 +64,28 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
 export default function NavBar() {
+  const [adress, setAdress] = useState("Rechercher ...");
+  const [lat, setLat] = useState("");
+  const [long, setLong] = useState("");
+
+  const handleAddressChange = (e) => {
+    const API_KEY = process.env.REACT_APP_API_KEY;
+    axios
+      .get(
+        `https://maps.googleapis.com/maps/api/geocode/json?address&key=${API_KEY}`
+      )
+
+      .then((result) => {
+        setLat(result.results[0].geometry.location.lat);
+        setLong(result.results[0].geometry.location.lng);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -79,19 +102,15 @@ export default function NavBar() {
           <Typography className={classes.title} variant="h6" noWrap>
             V'Lille App
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
-            />
-          </div>
+          <LocationSearchInput
+            address={adress}
+            onAddressChange={handleAddressChange}
+            placeholder="Search…"
+            classes={{
+              root: classes.inputRoot,
+              input: classes.inputInput,
+            }}
+          />
         </Toolbar>
       </AppBar>
     </div>
