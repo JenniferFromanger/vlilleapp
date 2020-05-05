@@ -4,7 +4,6 @@ import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import LocateControl from "./geo-local";
 import Cb from "../icons/Cb";
 import DirectionsBikeIcon from "@material-ui/icons/DirectionsBike";
-//import PopupStyle from "./PopStyle";
 import SettingsInputCompositeIcon from "@material-ui/icons/SettingsInputComposite";
 import {
   iconeEmpty,
@@ -75,31 +74,35 @@ export default function Mappy({ stations, stationState }) {
           >
             {!stationState(station) && (
               <Popup
-                className="wrapper"
                 key={station.fields.libelle}
                 position={[
                   station.fields.localisation[0],
                   station.fields.localisation[1],
                 ]}
               >
-                <h2 className="one">{station.fields.nom}</h2>
-                <div className="three">
-                  <p>{station.fields.type === "AVEC TPE" && <Cb />}</p>
-                </div>
-                <div>
-                  <div>
-                    <p>
-                      <DirectionsBikeIcon />
+                <div class="wrapper">
+                  <h2>{station.fields.nom}</h2>
+                  <div class="cb">
+                    <p>{station.fields.type === "AVEC TPE" && <Cb />}</p>
+                  </div>
+                  <div class="wrap2">
+                    <p class="info">
                       {station.fields.nbvelosdispo}
-
-                      <span>Nombres vélos</span>
-                    </p>
-                    <p>
-                      <SettingsInputCompositeIcon />
-                      {station.fields.nbplacesdispo}
-                      <span>Nombres de place</span>
+                      <span>
+                        <DirectionsBikeIcon class="icon" />
+                      </span>
                     </p>
                   </div>
+                  <p class="legend">Nombre de vélos</p>
+                  <div class="wrap2">
+                    <p class="info">
+                      {station.fields.nbplacesdispo}
+                      <span>
+                        <SettingsInputCompositeIcon class="icon" />
+                      </span>
+                    </p>
+                  </div>
+                  <p class="legend">Nombre de places</p>
                 </div>
               </Popup>
             )}
