@@ -35,6 +35,8 @@ const iconeGrey = new Icon({
   iconSize: [35, 49.58],
 });
 
+
+
 export default function Mappy({ stations, stationState }) {
   const changeIcon = (station) => {
     const percentage =
@@ -75,6 +77,9 @@ export default function Mappy({ stations, stationState }) {
 
     onActivate: () => {}, // for geo-locater//
   };
+  const test =()=>{
+    window.alert("test");
+  }
 
   return (
     <Map center={[50.62925, 3.057256]} zoom={16}>
@@ -112,6 +117,7 @@ export default function Mappy({ stations, stationState }) {
                   <p>{station.fields.type==='AVEC TPE' && <Cb/>}</p>
                 </div>
                 </div>
+              
               </Popup>
             )}
           </Marker>

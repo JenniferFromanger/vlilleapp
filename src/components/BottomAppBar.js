@@ -4,8 +4,6 @@ import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/icons/Add";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -26,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function BottomAppBar() {
   const classes = useStyles();
+
   return (
     <>
       <CssBaseline />
@@ -36,9 +35,8 @@ export default function BottomAppBar() {
             color="inherit"
             aria-label="open drawer"
           ></IconButton>
-          <Fab color="secondary" aria-label="add" className={classes.fabButton}>
-            <AddIcon />
-          </Fab>
+            <img className={classes.fabButton} />
+           
           <div className={classes.grow} />
         </Toolbar>
       </AppBar>

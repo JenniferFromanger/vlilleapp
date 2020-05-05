@@ -52,7 +52,7 @@ export default function App() {
         </Route>
       </Switch>
 
-      <BottomAppBar />
+      <BottomAppBar stations={stations}/>
     </Router>
   );
 }
