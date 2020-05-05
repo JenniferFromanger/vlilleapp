@@ -1,41 +1,19 @@
 import React from "react";
 import "./Mappy.scss";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
-import { Icon } from "leaflet";
 import LocateControl from "./geo-local";
-import Cb from '../icons/Cb';
-
-const iconeFull = new Icon({
-  iconUrl: "/full.png",
-  iconSize: [35, 49.58],
-});
-
-const iconeHalf = new Icon({
-  iconUrl: "/half.png",
-  iconSize: [35, 49.58],
-});
-
-const iconeQuarter = new Icon({
-  iconUrl: "/quater.png",
-  iconSize: [35, 49.58],
-});
-
-const iconeTroisQuart = new Icon({
-  iconUrl: "/trois.png",
-  iconSize: [35, 49.58],
-});
-
-const iconeEmpty = new Icon({
-  iconUrl: "/empty.png",
-  iconSize: [35, 49.58],
-});
-
-const iconeGrey = new Icon({
-  iconUrl: "/grey.png",
-  iconSize: [35, 49.58],
-});
-
-
+import Cb from "../icons/Cb";
+import DirectionsBikeIcon from "@material-ui/icons/DirectionsBike";
+//import PopupStyle from "./PopStyle";
+import SettingsInputCompositeIcon from "@material-ui/icons/SettingsInputComposite";
+import {
+  iconeEmpty,
+  iconeGrey,
+  iconeFull,
+  iconeHalf,
+  iconeQuarter,
+  iconeTroisQuart,
+} from "./styles/Icon";
 
 export default function Mappy({ stations, stationState }) {
   const changeIcon = (station) => {
@@ -77,9 +55,6 @@ export default function Mappy({ stations, stationState }) {
 
     onActivate: () => {}, // for geo-locater//
   };
-  const test =()=>{
-    window.alert("test");
-  }
 
   return (
     <Map center={[50.62925, 3.057256]} zoom={16}>
@@ -100,24 +75,32 @@ export default function Mappy({ stations, stationState }) {
           >
             {!stationState(station) && (
               <Popup
-                className="popup"
+                className="wrapper"
                 key={station.fields.libelle}
                 position={[
                   station.fields.localisation[0],
                   station.fields.localisation[1],
                 ]}
               >
-                <h2>Station: {station.fields.nom}</h2>
-                <div className="popup_contain">
-                  <div className="info_velos">
-                <p>Nombres vélos: {station.fields.nbvelosdispo}</p>
-                <p>Nombres places: {station.fields.nbplacesdispo}</p>
+                <h2 className="one">{station.fields.nom}</h2>
+                <div className="three">
+                  <p>{station.fields.type === "AVEC TPE" && <Cb />}</p>
                 </div>
-                <div className="cb">
-                  <p>{station.fields.type==='AVEC TPE' && <Cb/>}</p>
+                <div>
+                  <div>
+                    <p>
+                      <DirectionsBikeIcon />
+                      {station.fields.nbvelosdispo}
+
+                      <span>Nombres vélos</span>
+                    </p>
+                    <p>
+                      <SettingsInputCompositeIcon />
+                      {station.fields.nbplacesdispo}
+                      <span>Nombres de place</span>
+                    </p>
+                  </div>
                 </div>
-                </div>
-              
               </Popup>
             )}
           </Marker>
