@@ -2,7 +2,7 @@ import React from "react";
 import "./List.scss";
 import Cb from "../icons/Cb";
 
-export default function List({ stations, stationState }) {
+export default function List({ stations, stationState, transports }) {
   const changeIcon = (station) => {
     const percentage =
       station.fields.nbvelosdispo /
@@ -22,7 +22,6 @@ export default function List({ stations, stationState }) {
       return "/full.png";
     }
   };
-
   return (
     <div>
       {stations
@@ -51,6 +50,14 @@ export default function List({ stations, stationState }) {
                   </div>
                   <div className="mesListes">
                     <div>
+                      {transports.map((transport) => (
+                        <>
+                          {transport.fields.commercialstopname ===
+                            station.fields.nom && (
+                            <p>{transport.fields.publiclinecode}</p>
+                          )}
+                        </>
+                      ))}
                       <p>Nombres vélos: {station.fields.nbvelosdispo}</p>
                       <p>Nombres places: {station.fields.nbplacesdispo}</p>
                     </div>

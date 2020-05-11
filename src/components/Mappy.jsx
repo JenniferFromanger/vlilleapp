@@ -104,7 +104,6 @@ export default function Mappy({ stations, stationState }) {
                 <h2>Station: {station.fields.nom}</h2>
                 <p>Nombres vélos: {station.fields.nbvelosdispo}</p>
                 <p>Nombres places: {station.fields.nbplacesdispo}</p>
-                )}
               </Popup>
             )}
           </Marker>

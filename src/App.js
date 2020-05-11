@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar";
 
 export default function App() {
   const [stations, setStations] = useState([]);
+  const [transports, setTransports] = useState([]);
 
   useEffect(() => {
     getVlilleLocalisation();
@@ -29,6 +30,20 @@ export default function App() {
     setTimeout(() => {
       getVlilleLocalisation();
     }, 2 * 1000 * 60);
+  };
+
+  useEffect(() => {
+    getStationTramBus();
+  }, []);
+
+  const getStationTramBus = () => {
+    axios
+      .get(
+        "https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset=ilevia-physicalstop&q=&rows=3667&facet=cityname&facet=transportmoderef&facet=publiclinecode"
+      )
+      .then((res) => {
+        setTransports(res.data.records);
+      });
   };
 
   const stationState = (station) => {
@@ -66,7 +81,11 @@ export default function App() {
           <Mappy stations={stations} stationState={stationState} />
         </Route>
         <Route path="/list">
-          <List stations={stations} stationState={stationState} />
+          <List
+            transports={transports}
+            stations={stations}
+            stationState={stationState}
+          />
         </Route>
       </Switch>
 
