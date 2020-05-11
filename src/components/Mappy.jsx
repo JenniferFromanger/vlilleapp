@@ -3,6 +3,7 @@ import "./Mappy.scss";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import LocateControl from "./geo-local";
+import Search from "./searchBarMap";
 
 const iconeFull = new Icon({
   iconUrl: "/full.png",
@@ -111,6 +112,7 @@ export default function Mappy({ stations, stationState }) {
         );
       })}
       <LocateControl options={locateOptions} />
+      <Search />
     </Map>
   );
 }
