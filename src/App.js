@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import List from "./components/List";
 import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
+//import SearchContext from "./components/SearchContext";
+//import Search from "./Search";
 
 export default function App() {
   const [stations, setStations] = useState([]);
@@ -58,9 +60,22 @@ export default function App() {
     return station;
   };
 
+  /*const contextValue = {
+    stations,
+    setStations,
+    loading: "",
+    setLoading: false,
+    search: "",
+    setSearch: "",
+    Search: "",
+    filteredStations: "",
+    setFilteredStations: [],
+  };*/
+
   return (
     <Router>
-      <NavBar />
+      <NavBar stations={stations} />
+
       <Switch>
         <Route exact path="/">
           <Mappy stations={stations} stationState={stationState} />

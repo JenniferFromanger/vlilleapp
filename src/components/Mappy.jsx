@@ -3,7 +3,6 @@ import "./Mappy.scss";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import LocateControl from "./geo-local";
-import Search from "./searchBarMap";
 
 const iconeFull = new Icon({
   iconUrl: "/full.png",
@@ -82,6 +81,7 @@ export default function Mappy({ stations, stationState }) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
+
       {stations.map((station) => {
         return (
           <Marker
@@ -112,7 +112,6 @@ export default function Mappy({ stations, stationState }) {
         );
       })}
       <LocateControl options={locateOptions} />
-      <Search />
     </Map>
   );
 }
